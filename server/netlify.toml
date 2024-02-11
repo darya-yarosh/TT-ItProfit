@@ -1,0 +1,12 @@
+[functions]
+  external_node_modules = ["express"]
+  node_bundler = "esbuild"
+  directory = "src/"
+[build]
+  base = "server/"
+  command = "npm install"
+  functions = "src/"
+[[headers]]
+  for = "/*"
+  [headers.values]
+    Access-Control-Allow-Origin = "*"
