@@ -19,6 +19,8 @@
     "webpack-cli": "^5.1.4"
   },
   "dependencies": {
+    "@netlify/functions": "^2.5.1",
+    "@types/express": "^4.17.21",
     "body-parser": "^1.20.2",
     "cors": "^2.8.5",
     "css-loader": "^6.10.0",
@@ -27,6 +29,7 @@
     "inputmask": "^5.0.8",
     "node-sass": "^9.0.0",
     "sass-loader": "^14.1.0",
+    "serverless-http": "^3.2.0",
     "style-loader": "^3.3.4"
   }
 }

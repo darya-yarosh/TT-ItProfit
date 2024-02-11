@@ -1,17 +1,19 @@
 const express = require("express");
+const { Router } = require("express");
 const cors = require("cors");
 const bodyParser = require("body-parser");
+const serverless = require("serverless-http");
 
 const { isInvalidFields, getInvalidFields } = require("./helper.js");
 
 const app = express();
-
+const router = Router();
 const port = 9090;
 
 app.use(cors());
 const jsonParser = bodyParser.json();
 
-app.post("/api/registration", (req, res) => {
+router.post("/registration", (req, res) => {
     if (Math.random() > 0.5) {
         res.statusCode = 400;
 
@@ -34,7 +36,7 @@ app.post("/api/registration", (req, res) => {
     }, Math.random() * 1000);
 });
 
-app.get("/api/ping", (req, res) => {
+router.get("/ping", (req, res) => {
     res.statusCode = 200;
     res.send({
         status: "success",
@@ -42,7 +44,7 @@ app.get("/api/ping", (req, res) => {
     });
 });
 
-app.post("/api/feedback", jsonParser, (req, res) => {
+router.post("/feedback", jsonParser, (req, res) => {
     const fields = getInvalidFields(req.body)
 
     if (isInvalidFields(fields)) {
@@ -57,7 +59,10 @@ app.post("/api/feedback", jsonParser, (req, res) => {
         })
     }
 })
+app.use("/api/", router);
 
 app.listen(port, () => {
     console.log(`Example app listening on port ${port}`);
 });
+
+module.exports.handler = serverless(app);
