@@ -1,0 +1,30 @@
+.radioSelect-wrapper {
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+
+	.input-wrapper {
+		width: 100%;
+		display: flex;
+		justify-content: center;
+		border-bottom: var(--border-oneline);
+		cursor: pointer;
+
+		&.checked {
+			background-color: lightgray;
+		}
+		input {
+			display: none;
+		}
+		label {
+			padding: 4px;
+		}
+
+		&:hover {
+			background-color: #ededed;
+		}
+	}
+	.input-wrapper:first-of-type {
+		border-top: var(--border-oneline);
+	}
+}
