@@ -9,26 +9,17 @@ export function changeLanguage(languageId) {
     }
 
     STATE.currentLanguage = languageId;
-    window.location.search = "?lang=" + STATE.currentLanguage.toLowerCase();
-    checkLanguage();
+    window.localStorage.setItem("Lang", STATE.currentLanguage)
+    window.location.reload();
 }
 
 export function checkLanguage() {
-    const params = window.location.search;
-    if (params === undefined || params.length === 0) {
-        const lang = STATE.currentLanguage.toLowerCase();
-        const urlWithLang = new URL(window.location.href + "?lang=" + lang)
-        window.location.replace(urlWithLang);
-    } else {
-        const isLang = params.includes("lang");
-        if (isLang) {
-            const newLang = params.split('=')[1].toUpperCase();
+    const currentLang = window.localStorage.getItem("Lang");
 
-            const isValidLang = LANGUAGES.map(language => language.id).includes(newLang);
-            if (isValidLang) {
-                STATE.currentLanguage = newLang;
-            }
-        }
+    if (currentLang === null) {
+        window.localStorage.setItem("Lang", STATE.currentLanguage);
+    } else {
+        STATE.currentLanguage = currentLang;
     }
 }
 
