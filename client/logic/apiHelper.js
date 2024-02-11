@@ -1,5 +1,5 @@
 async function sendRequest(formData) {
-    const url = 'https://yds-itprofit-server.netlify.app/feedback';
+    const url = 'https://yds-itprofit-server.netlify.app/api/feedback';
     const response = await fetch(url, {
         method: "POST",
         headers: {
