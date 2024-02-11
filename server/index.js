@@ -10,7 +10,20 @@ const app = express();
 const router = Router();
 const port = 9090;
 
-app.use(cors());
+const corsOptions = {
+    optionsSuccessStatus: 200,
+    credentials: true,
+    origin: '*',
+};
+app.use(cors(corsOptions));
+app.use((request, response, next) => {
+    response.setHeader('Access-Control-Allow-Origin', '*');
+    response.setHeader('Access-Control-Allow-Methods', 'POST, GET, PUT');
+    response.setHeader('Access-Control-Allow-Headers', 'Content-Type');
+    response.setHeader('Access-Control-Allow-Credentials', 'true');
+    next();
+});
+
 const jsonParser = bodyParser.json();
 
 router.post("/registration", (req, res) => {
