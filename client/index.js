@@ -104,3 +104,4 @@ export function mainPage() {
 }
 
 mainPage();
+document.title = INTERFACE[STATE.currentLanguage].appTitle;
