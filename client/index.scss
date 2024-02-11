@@ -1,11 +1,103 @@
-$font-size: 3rem;
-$font-color: #ff0000;
-
-html {
-	font-size: $font-size;
-	color: $font-color;
+:root {
+	--font-color: #252525;
+	--font-family: "Lucida Sans Unicode";
+	--first-color: #ffffff;
+	--second-color: #444444;
+	--alert-color: #fd0037;
+	--border-oneline: 1px #c2c2c2 solid;
 }
 
-h1 {
-	color: $font-color;
+html {
+	color: var(--font-color);
+	font-family: var(--font-family);
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	margin: 0;
+}
+
+a,
+input,
+textarea,
+button,
+select {
+	font-family: var(--font-family);
+}
+
+a,
+button,
+label {
+	cursor: pointer;
+}
+
+input::-webkit-input-placeholder,
+input:-ms-input-placeholder,
+input:-moz-placeholder,
+input::-moz-placeholder {
+	font-family: var(--font-family);
+}
+
+#root {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 24px;
+}
+
+.root-with-open-modal {
+	overflow-y: hidden;
+}
+
+body {
+	margin: 0;
+	width: 100vw;
+	overflow-x: hidden;
+}
+
+main {
+	width: 50%;
+	display: flex;
+	justify-content: center;
+	flex-direction: column;
+	align-items: center;
+	gap: 24px;
+
+	article {
+		display: flex;
+		flex-direction: column;
+		gap: 16px;
+
+		h1 {
+			font-size: 3rem;
+		}
+	}
+}
+
+.alert {
+	color: var(--alert-color);
+}
+
+input,
+textarea {
+	&.alert {
+		border: 1px solid var(--alert-color);
+	}
+}
+
+@media screen and (max-width: 1024px) {
+	main {
+		width: 70%;
+	}
+}
+
+@media screen and (max-width: 425px) {
+	main {
+		width: 85%;
+	}
 }

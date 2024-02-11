@@ -1,0 +1,29 @@
+.dropdown {
+	display: inline-block;
+	position: relative;
+}
+
+.dropdown-content {
+	display: none;
+	position: absolute;
+	overflow: auto;
+	right: 0;
+	background-color: var(--first-color);
+	box-shadow: 0px 10px 10px 0px rgba(0, 0, 0, 0.4);
+}
+
+.dropdown:hover .dropdown-content {
+	display: block;
+}
+
+.dropdown-element {
+	display: block;
+    text-decoration: none;
+	>:first-child {
+		padding: 4px 8px 4px 4px;
+	}
+}
+
+.dropdown-element:hover {
+	background-color: #ededed;
+}

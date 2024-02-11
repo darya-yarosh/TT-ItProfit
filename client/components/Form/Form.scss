@@ -1,0 +1,13 @@
+form {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 24px;
+	width: 100%;
+
+	fieldset {
+		display: flex;
+		flex-direction: column;
+		width: 100%;
+	}
+}

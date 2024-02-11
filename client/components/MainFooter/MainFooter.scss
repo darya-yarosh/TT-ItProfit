@@ -1,0 +1,21 @@
+footer {
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	width: 100%;
+
+	div {
+		display: flex;
+		flex-direction: row;
+		justify-content: center;
+		width: 95%;
+
+		border-top: var(--border-oneline);
+		padding: 24px 0px;
+	}
+
+	a {
+		color: var(--font-color);
+		text-decoration: none;
+	}
+}
