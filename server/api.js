@@ -8,7 +8,6 @@ const { isInvalidFields, getInvalidFields } = require("./helper.js");
 
 const app = express();
 const router = Router();
-const port = 9090;
 
 const corsOptions = {
     optionsSuccessStatus: 200,
