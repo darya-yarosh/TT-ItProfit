@@ -1,0 +1,4 @@
+[[redirects]]
+  from = "/*"
+  to = "/?lang=ru"
+  status = 200
