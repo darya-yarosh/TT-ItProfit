@@ -18,8 +18,8 @@ const corsOptions = {
 app.use(cors(corsOptions));
 app.use((request, response, next) => {
     response.setHeader('Access-Control-Allow-Origin', '*');
-    response.setHeader('Access-Control-Allow-Methods', 'POST, GET, PUT');
-    response.setHeader('Access-Control-Allow-Headers', 'Content-Type');
+    response.setHeader('Access-Control-Allow-Methods', 'POST, GET');
+    response.setHeader('Access-Control-Allow-Headers', 'Content-Type, Access-Control-Allow-Headers, Access-Control-Request-Headers, Access-Control-Request-Method, X-Requested-With, Accept, Authorization');
     response.setHeader('Access-Control-Allow-Credentials', 'true');
     next();
 });
