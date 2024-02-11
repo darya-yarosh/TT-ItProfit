@@ -8,7 +8,7 @@
   functions = "src/"
 [[redirects]]
   to = "/.netlify/functions/api/:splat"
-  from = "/api/*"
+  from = "/*"
   status = 200
 [[headers]]
   for = "/*"

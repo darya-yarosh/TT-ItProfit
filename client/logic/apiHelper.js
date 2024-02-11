@@ -1,5 +1,5 @@
 async function sendRequest(formData) {
-    const url = 'http://127.0.0.1:9090/api/feedback';
+    const url = 'https://yds-itprofit-server.netlify.app/feedback';
     const response = await fetch(url, {
         method: "POST",
         headers: {
