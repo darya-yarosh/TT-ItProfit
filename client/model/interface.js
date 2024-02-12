@@ -3,7 +3,7 @@ export const LANGUAGES = [
         id: "RU",
         value: "РУССКИЙ"
     }, {
-        id: "ENG",
+        id: "EN",
         value: "ENGLISH",
     },
 ];
@@ -44,7 +44,7 @@ export const INTERFACE = {
             successFeedback: "Ваша заявка успешно отправлена",
         }
     },
-    ENG: {
+    EN: {
         appTitle: "Training task",
         articleTitle: "Lorem ipsum",
         articleText: `Lorem ipsum dolor sit amet, consectetur adipiscing elit. In ullamcorper neque vel dolor maximus, at finibus tortor pharetra. Sed in mi et ipsum laoreet mollis nec id felis. Sed volutpat ultrices molestie. In pretium libero sit amet eros vehicula, id tincidunt quam condimentum. Duis porttitor metus sed arcu pulvinar, vitae pretium neque accumsan. Sed luctus non dui eget feugiat. Suspendisse dolor dui, euismod in elit et, laoreet lobortis eros. Phasellus lectus nulla, faucibus ac lectus quis, finibus lobortis odio. Etiam suscipit aliquam diam eget maximus. Vivamus tempus ullamcorper nisl. Nulla id orci non diam vehicula commodo. Morbi nec augue leo. Nulla suscipit, dolor in pretium accumsan, ligula odio pulvinar erat, ac tristique purus nibh id mauris. Ut nisl odio, molestie in mauris eget, pharetra commodo risus. Nam ut odio a magna hendrerit hendrerit quis id ligula.

@@ -104,4 +104,6 @@ export function mainPage() {
 }
 
 mainPage();
+
 document.title = INTERFACE[STATE.currentLanguage].appTitle;
+document.documentElement.lang = STATE.currentLanguage.toLowerCase();
