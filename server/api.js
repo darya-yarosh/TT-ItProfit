@@ -3,6 +3,7 @@ const { Router } = require("express");
 const cors = require("cors");
 const bodyParser = require("body-parser");
 const serverless = require("serverless-http");
+const config = require("../config.json");
 
 const { isInvalidFields, getInvalidFields } = require("./helper.js");
 
@@ -72,5 +73,12 @@ router.post("/feedback", jsonParser, (req, res) => {
     }
 })
 app.use("/api/", router);
+
+if (config.isLocal) {
+    const port = 9090;
+    app.listen(port, () => {
+        console.log(`Example app listening on port ${port}`);
+    });
+}
 
 module.exports.handler = serverless(app);

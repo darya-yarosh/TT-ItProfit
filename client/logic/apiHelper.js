@@ -1,5 +1,11 @@
-async function sendRequest(formData) {
-    const url = 'https://yds-itprofit-server.netlify.app/api/feedback';
+import config from "../../config.json";
+
+export async function sendRequest(formData) {
+    const API = config.isLocal
+        ? config.localUrl
+        : config.netlifyUrl;
+    const url = `${API}/api/feedback`;
+
     const response = await fetch(url, {
         method: "POST",
         headers: {
@@ -10,8 +16,4 @@ async function sendRequest(formData) {
     const result = await response.json();
 
     return result;
-}
-
-module.exports = {
-    sendRequest,
 }
