@@ -35,14 +35,6 @@ export const INTERFACE = {
             message: "Сообщение",
             messagePlaceholder: "Напишите свой отзыв здесь."
         },
-        alertList: {
-            fieldNotFound: "Одно из текстовых полей не найдено. Перезагрузите страницу и повторите действия.",
-            name: "Некорректный формат имени!",
-            mail: "Некорректный формат почты!",
-            tel: "Некорректный номер телефона!",
-            message: "Некорректное сообщение!",
-            successFeedback: "Ваша заявка успешно отправлена",
-        }
     },
     EN: {
         appTitle: "Training task",
@@ -70,13 +62,5 @@ export const INTERFACE = {
             message: "Message",
             messagePlaceholder: "Write your review here."
         },
-        alertList: {
-            fieldNotFound: "One of the text fields was not found. Reload the page and repeat the steps.",
-            name: "Incorrect name format!",
-            mail: "Incorrect mail format!",
-            tel: "Incorrect phone number!",
-            message: "Incorrect message!",
-            successFeedback: "Your request has been successfully submitted."
-        }
     }
 }

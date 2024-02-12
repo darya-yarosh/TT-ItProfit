@@ -3,7 +3,9 @@ const { Router } = require("express");
 const cors = require("cors");
 const bodyParser = require("body-parser");
 const serverless = require("serverless-http");
+
 const config = require("../config.json");
+const { SERVER_INTERFACE } = require("./interface.js");
 
 const { isInvalidFields, getInvalidFields } = require("./helper.js");
 
@@ -26,7 +28,7 @@ app.use((request, response, next) => {
 
 const jsonParser = bodyParser.json();
 
-router.post("/registration", (req, res) => {
+router.post("/  ", (req, res) => {
     if (Math.random() > 0.5) {
         res.statusCode = 400;
 
@@ -58,7 +60,8 @@ router.get("/ping", (req, res) => {
 });
 
 router.post("/feedback", jsonParser, (req, res) => {
-    const fields = getInvalidFields(req.body)
+    const lang = req.body.clientLang;
+    const fields = getInvalidFields(lang, req.body)
 
     if (isInvalidFields(fields)) {
         res.send({
@@ -68,7 +71,7 @@ router.post("/feedback", jsonParser, (req, res) => {
     } else {
         res.send({
             status: "success",
-            msg: "Ваша заявка успешно отправлена",
+            msg: SERVER_INTERFACE[lang].feedback.success,
         })
     }
 })

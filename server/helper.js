@@ -1,3 +1,5 @@
+const { SERVER_INTERFACE } = require("./interface.js");
+
 const {
     isValidName,
     isValidMail,
@@ -5,20 +7,20 @@ const {
     isValidMessage
 } = require("./validator.js");
 
-function getInvalidFields(object) {
+function getInvalidFields(lang, object) {
     const fields = {};
 
     if (isValidName(object.name) === false) {
-        fields.name = "Incorrect name format";
+        fields.name = SERVER_INTERFACE[lang].feedback.name;
     }
     if (isValidMail(object.mail) === false) {
-        fields.mail = "Incorrect mail format";
+        fields.mail = SERVER_INTERFACE[lang].feedback.mail;
     }
     if (isValidTel(object.tel) === false) {
-        fields.tel = "Incorrect phone number";
+        fields.tel = SERVER_INTERFACE[lang].feedback.tel;
     }
     if (isValidMessage(object.message) === false) {
-        fields.message = "Incorrect message";
+        fields.message = SERVER_INTERFACE[lang].feedback.message;
     }
 
     return fields;

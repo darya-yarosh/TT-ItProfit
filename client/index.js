@@ -85,7 +85,7 @@ export function mainPage() {
             fieldList.forEach(fieldName => {
                 showFieldAlert(
                     fieldName,
-                    INTERFACE[STATE.currentLanguage].alertList[fieldName]
+                    result.fields[fieldName]
                 );
             })
         }

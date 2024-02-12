@@ -1,4 +1,5 @@
 import config from "../../config.json";
+import { STATE } from "../index";
 
 export async function sendRequest(formData) {
     const API = config.isLocal
@@ -6,6 +7,7 @@ export async function sendRequest(formData) {
         : config.netlifyUrl;
     const url = `${API}/api/feedback`;
 
+    formData.clientLang = STATE.currentLanguage;
     const response = await fetch(url, {
         method: "POST",
         headers: {
